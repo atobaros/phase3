@@ -1,0 +1,35 @@
+<input type="number" placeholder="Insert ID" name="id" [formControl]="idFormControl">
+<button (click)="getOneCustomer()"[disabled]="idFormControl.invalid">Get The Customer</button>
+<br>
+<span *ngIf="idFormControl.errors?.required && idFormControl.touched"> ID is missing</span>
+<span *ngIf="idFormControl.errors?.pattern && idFormControl.touched"> ID can not be negative or a decimal number</span>
+<span *ngIf="idFormControl.errors?.min && idFormControl.touched"> ID has to be greater than zero</span>
+<br>
+ <hr>
+
+ <div>
+
+<table id="table">
+    <caption>Customer Table</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf = "customer">
+            <td>{{customer.id}}</td>
+            <td>{{customer.firstName}}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.password}}</td>
+        </tr>
+    </tbody>
+    <tr></tr>
+</table>
+</div>
+

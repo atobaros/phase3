@@ -1,0 +1,50 @@
+<div id="back">
+    <h3>Purchase Coupon</h3>
+    <div id="front">
+        <form action="">
+            <br>
+            <input type="number" placeholder="insert ID" name="id" [formControl]="idFormControl">
+            <select name="category" id="category" [formControl]="cateFormControl">
+                <option value="" disabled selected hidden> Select Category</option>
+                <option value="FOOD">FOOD</option>
+                <option value="ELECTRICITY">ELECTRICITY</option>
+                <option value="RESTAURANT">RESTAURANT</option>
+                <option value="VACATION">VACATION</option>
+            </select>
+            <input type="text" placeholder="insert title" name="title" [formControl]="titleFormControl">
+            <br>
+            <span *ngIf="idFormControl.errors?.required && idFormControl.touched"> ID is missing</span>
+            <span *ngIf="idFormControl.errors?.min && idFormControl.touched"> ID has to be greater than zero</span>
+            <span *ngIf="cateFormControl.errors?.required && cateFormControl.touched"> Category is missing</span>
+            <span *ngIf="titleFormControl.errors?.required && titleFormControl.touched"> Title is missing</span>
+            <span *ngIf="titleFormControl.errors?.maxlength && titleFormControl.touched"> The title is too long</span>
+            <br><br>
+
+            <input type="text" placeholder="insert description" name="description" [formControl]="descriptionFormControl">
+            <input type="text" placeholder="Select Start Date" onfocus="(this.type='date')" placeholder="Select Start Date" name="startDate" [formControl]="startDateFormControl">
+            <input type="text" placeholder="Select End Date" onfocus="(this.type='date')" placeholder="Select End Date" name="endDate"  [formControl]="endDateFormControl">
+            <br>    
+            <span *ngIf="descriptionFormControl.errors?.required && descriptionFormControl.touched"> Description is
+                missing</span>
+            <span *ngIf="descriptionFormControl.errors?.maxlength && descriptionFormControl.touched"> The description is
+                too long</span>
+            <span *ngIf="startDateFormControl.errors?.required && startDateFormControl.touched"> Date is missing</span>
+            <span *ngIf="endDateFormControl.errors?.required && endDateFormControl.touched"> Date is missing</span>
+            <br><br>
+
+            <input type="number" placeholder="insert Amount" name="amount" [formControl]="amountFormControl">
+            <input type="number" placeholder="insert price" name="price" [formControl]="priceFormControl">
+            <input type="url" placeholder="insert image url" name="image" [formControl]="imageFormControl">
+            <span *ngIf="amountFormControl.errors?.required && amountFormControl.touched"> Amount is missing</span>
+            <span *ngIf="amountFormControl.errors?.min && amountFormControl.touched"> Amount has to be greater than zero</span>
+            <span *ngIf="amountFormControl.errors?.pattern && amountFormControl.touched"> Amount can't be a decimal number</span>
+            <span *ngIf="priceFormControl.errors?.required && priceFormControl.touched"> Price is missing</span>
+            <span *ngIf="priceFormControl.errors?.min && priceFormControl.touched"> Price has to be greater than zero</span> 
+            <span *ngIf="imageFormControl.errors?.required && imageFormControl.touched"> Url is missing</span>
+            <br><br>
+            <button (click)="purchaseCoupon()" [disabled]="formGroup.invalid">Purchase Coupon</button>
+
+
+        </form>
+    </div>
+</div>

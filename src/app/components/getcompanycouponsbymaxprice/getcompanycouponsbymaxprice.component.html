@@ -1,0 +1,42 @@
+<br>
+<input type="number" placeholder="Insert Max Price" name="price" [formControl]="priceFormControl" >
+<button (click)="getCoupByMaxPrice()" [disabled]="priceFormControl.invalid">Get Coupons</button>
+<br>
+<span *ngIf="priceFormControl.errors?.required && priceFormControl.touched"> Max price is missing</span>
+<span *ngIf="priceFormControl.errors?.min && priceFormControl.touched"> Max price has to be greater than zero</span>
+<br><br>
+ <hr>
+
+ <div>
+
+<table id="table">
+    <caption>Company Coupons Table</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let c of coupons">
+            <td>{{c.id}}</td>
+            <td>{{c.category}}</td>
+            <td>{{c.title}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate}}</td>
+            <td>{{c.endDate}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </tbody>
+    <tr></tr>
+</table>
+</div>

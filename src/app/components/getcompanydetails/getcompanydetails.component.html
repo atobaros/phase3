@@ -1,0 +1,27 @@
+<!-- <button (click)="getCompanyDetails()">Get Company's Details</button> -->
+ <hr>
+
+ <div>
+
+<table id="table">
+    <caption>Company Details</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf = "companyDetails">
+            <td>{{companyDetails.id}}</td>
+            <td>{{companyDetails.name}}</td>
+            <td>{{companyDetails.email}}</td>
+            <td>{{companyDetails.password}}</td>
+        </tr>
+    </tbody>
+    <tr></tr>
+</table>
+</div>
+

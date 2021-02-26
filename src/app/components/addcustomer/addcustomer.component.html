@@ -1,0 +1,43 @@
+<div id="back">
+
+    <h3>Add Customer</h3>
+
+    <div id="front">
+        <form action="">
+
+            <input type="text" placeholder="insert name" name="name" [formControl]="nameFormControl">
+            <br>
+            <span *ngIf="nameFormControl.errors?.required && nameFormControl.touched"> Name is missing</span>
+            <span *ngIf="nameFormControl.errors?.pattern && nameFormControl.touched"> Name must start with capital
+                letter</span>
+            <span *ngIf="nameFormControl.errors?.maxlength && nameFormControl.touched">. The name is too long</span>
+            <br>
+            <input type="text" placeholder="insert last name" name="lastName" [formControl]="lastNameFormControl">
+            <br>
+            <span *ngIf="lastNameFormControl.errors?.required && lastNameFormControl.touched"> Last name is
+                missing</span>
+            <span *ngIf="lastNameFormControl.errors?.pattern && lastNameFormControl.touched"> Last name must start with
+                capital letter</span>
+            <span *ngIf="lastNameFormControl.errors?.maxlength && lastNameFormControl.touched">. The last name is too
+                long</span>
+            <br>
+            <input type="text" placeholder="insert email" name="email" [formControl]="emailFormControl">
+            <br>
+            <span *ngIf="emailFormControl.errors?.required && emailFormControl.touched"> Email is missing</span>
+            <span *ngIf="emailFormControl.errors?.maxlength && emailFormControl.touched"> The email is too long</span>
+            <br>
+            <input type="text" placeholder="insert password" name="password" [formControl]="passwordFormControl">
+            <br>
+            <span *ngIf="passwordFormControl.errors?.required && passwordFormControl.touched"> Password is
+                missing</span>
+            <span *ngIf="passwordFormControl.errors?.minlength && passwordFormControl.touched"> The Password must have
+                minimum 6 characters</span>
+            <span *ngIf="passwordFormControl.errors?.maxlength && passwordFormControl.touched">. The Password is too
+                long</span>
+            <br><br>
+            <button (click)="addCustomer()" [disabled]="formGroup.invalid">Add Customer</button>
+
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<section>
+
+
+    <aside>
+        <button routerLink="addCoupon">Add Coupon </button>
+        <button routerLink="updateCoupon">Update Coupon </button>
+        <button routerLink="deleteCoupon">Delete Coupon </button>
+        <button routerLink="getAllCompanyCoupons">Get All Company's Coupons </button>
+        <button routerLink="getCompanyCoupByCate">Get Company's Coupons By Category</button>
+        <button routerLink="getCompanyCoupByMaxPrice">Get Company's Coupons By Max Price</button>
+        <button routerLink="getCompanyDetails">Get Company's Details </button>
+        <button (click)="logout()">Logout</button>
+
+
+    </aside>
+    <main>
+
+        <router-outlet></router-outlet>
+
+    </main>
+   
+</section>

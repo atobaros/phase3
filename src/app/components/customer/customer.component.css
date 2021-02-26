@@ -1,0 +1,36 @@
+section{
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+    display: grid;
+    box-sizing:border-box;
+    height: 100%;
+    border: solid black 1px;
+    
+    
+    
+}
+
+
+
+aside{
+    grid-column: 1 / 2;
+    border: solid black 1px;
+    text-align: center;
+    border:  inherit;
+
+}
+
+main{
+    grid-column: 2 / 3;
+    text-align: center;
+    border:  inherit;
+    overflow-y: auto;
+
+}
+
+button{
+    width: 100%;
+    background-color:  white;
+    height: 50px;
+    font-weight: 900;
+}

@@ -1,0 +1,31 @@
+
+<input type="number" placeholder="Insert Company ID" name="id" [formControl]="idFormControl" >
+<button (click)="getOneCompany()" [disabled]="idFormControl.invalid">Get The Company</button>
+<br>
+<span *ngIf="idFormControl.errors?.required && idFormControl.touched"> ID is missing</span>
+<span *ngIf="idFormControl.errors?.pattern && idFormControl.touched"> ID can not be negative or a decimal number</span>
+<br>
+<hr>
+
+<div id="back">
+<table id="table">
+    <caption>Companies Table</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf = "company">
+            <td>{{company.id}}</td>
+            <td>{{company.name}}</td>
+            <td>{{company.email}}</td>
+            <td>{{company.password}}</td>
+        </tr>
+    </tbody>
+    <tr></tr>
+</table>
+</div>

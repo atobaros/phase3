@@ -1,0 +1,39 @@
+<button (click)="getAllCompanyCoupons()"> Refresh <i class="fa fa-refresh"></i></button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <hr>
+
+ <div>
+
+<table id="table">
+    <caption>Company Coupons Table</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let c of coupons">
+            <td>{{c.id}}</td>
+            <td>{{c.category}}</td>
+            <td>{{c.title}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate}}</td>
+            <td>{{c.endDate}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td><img src="../../../assets/picturs//{{c.image}}" /></td>
+        </tr>
+    </tbody>
+    <tr></tr>
+</table>
+</div>
+

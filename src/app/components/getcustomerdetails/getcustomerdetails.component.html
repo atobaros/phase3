@@ -1,0 +1,27 @@
+<button (click)="getCustomerDetails()">Get Customer's Details</button>
+ <hr>
+
+ <div>
+
+<table id="table">
+    <caption>Customer Details</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf = "customerDetails">
+            <td>{{customerDetails.id}}</td>
+            <td>{{customerDetails.firstName}}</td>
+            <td>{{customerDetails.lastName}}</td>
+            <td>{{customerDetails.email}}</td>
+            <td>{{customerDetails.password}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

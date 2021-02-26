@@ -1,0 +1,6 @@
+<input type="number" placeholder="Insert Customer ID" name="id" [formControl]="idFormControl">
+<br>
+<span *ngIf="idFormControl.errors?.required && idFormControl.touched"> ID is missing</span>
+<span *ngIf="idFormControl.errors?.pattern  && idFormControl.touched"> ID can not be negative</span>
+<br><br>
+<button (click)="deleteCustomer()" [disabled]="idFormControl.invalid">Delete Customer</button>

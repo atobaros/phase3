@@ -1,0 +1,37 @@
+<button id="btn1" (click)="getAllCustomers()">Refresh <i class="fa fa-refresh"></i></button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <hr>
+
+ <div>
+
+<table id="table">
+    <caption>Customers Table</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th colspan="2">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let c of customers">
+            <td>{{c.id}}</td>
+            <td><input type="text" class="c.id" id="first{{c.id}}" value = "{{c.firstName}}" disabled/></td>
+            <td><input type="text" class="c.id" id="last{{c.id}}" value = "{{c.lastName}}" disabled/></td>
+            <td><input type="text" class="c.id" id="email{{c.id}}" value = "{{c.email}}" disabled/></td>
+            <td><input type="text" class="c.id" id="pass{{c.id}}" value = "{{c.password}}" disabled/></td>
+            <td><button class="btn3" (click)="deleteCustomer(c.id)">delete <i class="fa fa-trash"></i></button></td>
+            <td><button class="btn3" id="edit-btn{{c.id}}"(click)="editCustomer(c.id)">edit <i class="fa fa-edit"></i></button>
+                <button class="btn3" id = "save-btn{{c.id}}" (click)="saveCompany()" style="display: none" >save <i class="fa fa-save"></i></button></td>
+            
+        </tr>
+    </tbody>
+    <tr></tr>
+</table>
+<h3 *ngIf="customers == null "> there is no customers</h3>
+
+</div>

@@ -1,0 +1,11 @@
+<form action="">
+
+    <input type="number" placeholder="insert id" name="id" [formControl]= "idFormControl">
+    <br>
+    <span *ngIf="idFormControl.errors?.required && idFormControl.touched"> ID is missing</span>
+    <span *ngIf="idFormControl.errors?.pattern  && idFormControl.touched"> ID can not be negative</span>
+    <br><br>
+    <button (click)="deleteCoupon()" [disabled]="idFormControl.invalid" >Delete Coupon</button>
+
+
+</form>

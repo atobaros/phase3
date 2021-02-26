@@ -1,0 +1,17 @@
+<h1>login</h1>
+
+<form action="">
+<select name="clientType" id="client" [(ngModel)]="clientType" >
+  <option value="ADMINISTRATOR">ADMINISTRATOR</option>
+  <option value="COMPANY">COMPANY</option>
+  <option value="CUSTOMER">CUSTOMER</option>
+</select>
+<br><br>
+<input type="text" placeholder="insert email" name="email" [(ngModel)]="clientName">
+<br><br>
+<input type="password" placeholder="insert password" name="password" [(ngModel)]="clientPassword">
+<br><br>
+<button (click)="login()">login</button>
+</form>
+
+
